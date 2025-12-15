@@ -127,6 +127,6 @@ O desenvolvimento deste projeto foi uma ótima oportunidade para colocar em prá
 
 Para uma **demonstração prática** do uso do sistema, confira o vídeo no link abaixo:
 
-**Link para Demonstração (Vídeo):** (https://youtu.be/Vad1gY-tCD4)
+**Link para Demonstração (Vídeo):** https://youtu.be/Vad1gY-tCD4
 
 Embora seja um projeto de console simples, ele é bem estruturado. Se for necessário expandir, posso facilmente adicionar uma interface gráfica ou migrar a persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio.
