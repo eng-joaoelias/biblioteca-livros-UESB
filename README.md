@@ -2,7 +2,7 @@
 
 ## 1. Introdução: O Projeto POO na Prática
 
-Este projeto é um **Sistema de Gerenciamento de Biblioteca**, desenvolvido como um programa de **console em Java**. Meu foco principal foi aplicar na prática todos os conceitos que estudamos em **Programação Orientada a Objetos (POO)**.
+Este projeto é um **Sistema de Gerenciamento de Biblioteca**, desenvolvido como um programa de **console em Java**. Meu foco principal foi aplicar na prática todos os conceitos abordados na disciplina de **Programação Orientada a Objetos II (POOII)** do curso **Tecnologia em Análise e Desenvolvimento de Sistemas**, ofertado pela Universidade Aberta do Brasil (UAB) na modalidade de Ensino à Distância.
 
 O sistema foi desenhado para organizar uma coleção de livros. Ele realiza as funções básicas de adicionar, consultar, editar e remover itens (o famoso CRUD), além de controlar os empréstimos feitos pelos leitores.
 
