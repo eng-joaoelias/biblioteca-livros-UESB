@@ -29,6 +29,32 @@ As principais funções que implementei no sistema são:
 
 ---
 
+## 2.1 Demonstração Visual da Interface
+
+Para ilustrar as funcionalidades no console, seguem as capturas de tela:
+
+### A. Menu Principal e Inicialização
+Mostra o menu principal do sistema carregando os dados de persistência.
+![Menu Principal](docs/images/print01.jpg)
+
+### B. Listagem e Ordenação
+Exemplo de escolha de listagem e exibição dos livros ordenados por título.
+![Listagem de Livros Ordenada](docs/images/print02.jpg)
+
+### C. Empréstimo, Busca e Status
+Demonstra o processo de empréstimo de um livro a um leitor cadastrado e, em seguida, o resultado da busca, mostrando o livro como "Emprestado" para um leitor específico.
+![Realização de Empréstimo e Busca Detalhada](docs/images/print03.jpg)
+
+### D. Tratamento de Erro (Livro Já Emprestado)
+Mostra como o sistema valida a lógica de negócio, impedindo que um livro já emprestado seja emprestado novamente e informando para qual leitor ele está.
+![Erro ao Tentar Emprestar Livro Indisponível](docs/images/print04.jpg)
+
+### E. Tratamento de Erro (Entrada Inválida)
+Exemplo do mecanismo de tratamento de exceções em ação, avisando o usuário quando ele digita uma opção inválida no menu.
+![Tratamento de Exceção para Entrada de Usuário](docs/images/print05.jpg)
+
+---
+
 ## 3. Como o Código Está Organizado (Arquitetura)
 
 O código foi dividido em **três camadas** principais para separar as responsabilidades, o que facilita a manutenção e a expansão futura:
@@ -55,8 +81,6 @@ O código foi dividido em **três camadas** principais para separar as responsab
 **Como as Classes se Relacionam:**
 * **Livro e Autor:** Há uma **Composição** – o Livro *precisa* ter um Autor.
 * **Livro e Leitor:** Há uma **Associação Opcional** – o Livro *pode* ter um Leitor associado (se estiver emprestado).
-
-
 
 ---
 
@@ -100,5 +124,9 @@ Para não perder os dados, usei a **serialização de objetos**.
 ## 7. Conclusão e Próximos Passos
 
 O desenvolvimento deste projeto foi uma ótima oportunidade para colocar em prática os conceitos de POO. Consegui criar um sistema funcional que atende aos requisitos propostos.
+
+Para uma **demonstração prática** do uso do sistema, confira o vídeo no link abaixo:
+
+**Link para Demonstração (Vídeo):** `(https://youtu.be/Vad1gY-tCD4)`
 
 Embora seja um projeto de console simples, ele é bem estruturado. Se for necessário expandir, posso facilmente adicionar uma interface gráfica ou migrar a persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio.
