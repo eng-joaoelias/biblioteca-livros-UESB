@@ -2,7 +2,7 @@
 
 ## 1. Introdução: O Projeto POO na Prática
 
-Este projeto é um **Sistema de Gerenciamento de Biblioteca**, desenvolvido como um programa de **console em Java**. Nosso foco principal foi aplicar na prática todos os conceitos que estudamos em **Programação Orientada a Objetos (POO)**.
+Este projeto é um **Sistema de Gerenciamento de Biblioteca**, desenvolvido como um programa de **console em Java**. Meu foco principal foi aplicar na prática todos os conceitos que estudamos em **Programação Orientada a Objetos (POO)**.
 
 O sistema foi desenhado para organizar uma coleção de livros. Ele realiza as funções básicas de adicionar, consultar, editar e remover itens (o famoso CRUD), além de controlar os empréstimos feitos pelos leitores.
 
@@ -13,19 +13,19 @@ O sistema foi desenhado para organizar uma coleção de livros. Ele realiza as f
 * **Tratamento de Exceções** (para evitar que o programa quebre)
 * **Persistência de Dados** (para salvar os dados em arquivo)
 
-Escolhemos a aplicação de console por ser simples e direta, permitindo que nos concentrássemos totalmente na lógica do negócio e na modelagem orientada a objetos.
+Escolhi a aplicação de console por ser simples e direta, permitindo que me concentrasse totalmente na lógica do negócio e na modelagem orientada a objetos.
 
 ---
 
 ## 2. O Que o Sistema Faz (Funcionalidades)
 
-As principais funções que implementamos no sistema são:
+As principais funções que implementei no sistema são:
 
 * **Salvar Dados (Persistência):** Os livros são salvos em um arquivo no computador usando o recurso de **serialização de objetos**. Assim, os dados não se perdem quando o programa é fechado e podem ser carregados novamente na próxima execução.
 * **Gerenciamento de Livros (CRUD):** É fácil adicionar, remover ou editar livros. A busca pode ser feita pelo ID único ou pelo título do livro.
 * **Controle de Empréstimos:** O sistema registra quem pegou qual livro e controla as devoluções, associando cada livro emprestado a um leitor específico.
-* **Organização e Listagem:** Podemos listar os livros de várias maneiras, como ordenados por título ou autor. Também implementamos filtros, como listar todos os livros de um autor específico ou apenas aqueles que estão emprestados.
-* **Prevenção de Erros:** Usamos o **tratamento de exceções** (o `try-catch`) para evitar falhas, tanto para lidar com entradas de usuário que não fazem sentido (como digitar texto onde se espera um número) quanto para problemas de leitura e escrita de arquivos.
+* **Organização e Listagem:** Podemos listar os livros de várias maneiras, como ordenados por título ou autor. Também implementei filtros, como listar todos os livros de um autor específico ou apenas aqueles que estão emprestados.
+* **Prevenção de Erros:** Usei o **tratamento de exceções** (o `try-catch`) para evitar falhas, tanto para lidar com entradas de usuário que não fazem sentido (como digitar texto onde se espera um número) quanto para problemas de leitura e escrita de arquivos.
 
 ---
 
@@ -71,24 +71,24 @@ O `GerenciadorBiblioteca` usa a `Persistencia` sempre que é necessário salvar 
 
 ---
 
-## 5. Como Usamos POO de Verdade
+## 5. Como Usei POO de Verdade
 
-Usamos os principais conceitos de Programação Orientada a Objetos da seguinte maneira:
+Usei os principais conceitos de Programação Orientada a Objetos da seguinte maneira:
 
 | Conceito | Onde Aplicamos |
 | :--- | :--- |
 | **Herança** | A classe `Leitor` estende e aproveita os atributos e métodos da classe `Pessoa`. |
 | **Encapsulamento** | Todos os atributos importantes das classes são `private`, e o acesso é feito apenas por meio de métodos públicos (`getters` e `setters`). |
-| **Polimorfismo** | Sobrescrevemos (usamos `@Override`) métodos como `toString()` e `equals()` nas classes de modelo para que se comportem de forma específica para cada objeto. |
-| **Coleções Genéricas** | Usamos `ArrayList<Livro>` e `ArrayList<Leitor>` para garantir que a lista só aceite o tipo de objeto correto (segurança de tipos). |
-| **Interfaces** | Implementamos `Comparable<Livro>` para definir a ordem natural dos livros (pelo título) e usamos `Comparator`s para ordenações flexíveis por outros critérios. |
-| **Tratamento de Exceções** | Usamos `try-catch` em vários pontos para garantir que o sistema lide com erros de I/O de arquivos e entradas do usuário. |
+| **Polimorfismo** | Sobrescrevi (usei `@Override`) métodos como `toString()` e `equals()` nas classes de modelo para que se comportem de forma específica para cada objeto. |
+| **Coleções Genéricas** | Usei `ArrayList<Livro>` e `ArrayList<Leitor>` para garantir que a lista só aceite o tipo de objeto correto (segurança de tipos). |
+| **Interfaces** | Implementei `Comparable<Livro>` para definir a ordem natural dos livros (pelo título) e usei `Comparator`s para ordenações flexíveis por outros critérios. |
+| **Tratamento de Exceções** | Usei `try-catch` em vários pontos para garantir que o sistema lide com erros de I/O de arquivos e entradas do usuário. |
 
 ---
 
 ## 6. Como os Dados São Salvos (Serialização)
 
-Para não perder os dados, usamos a **serialização de objetos**.
+Para não perder os dados, usei a **serialização de objetos**.
 
 ### O Fluxo:
 
@@ -99,6 +99,6 @@ Para não perder os dados, usamos a **serialização de objetos**.
 
 ## 7. Conclusão e Próximos Passos
 
-O desenvolvimento deste projeto foi uma ótima oportunidade para colocar em prática os conceitos de POO. Conseguimos criar um sistema funcional que atende aos requisitos propostos.
+O desenvolvimento deste projeto foi uma ótima oportunidade para colocar em prática os conceitos de POO. Consegui criar um sistema funcional que atende aos requisitos propostos.
 
-Embora seja um projeto de console simples, ele é bem estruturado. Se quisermos expandir, podemos facilmente adicionar uma interface gráfica ou migrar a persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio.
+Embora seja um projeto de console simples, ele é bem estruturado. Se for necessário expandir, posso facilmente adicionar uma interface gráfica ou migrar a persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio.
