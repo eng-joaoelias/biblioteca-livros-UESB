@@ -6,7 +6,7 @@ Este projeto é um **Sistema de Gerenciamento de Biblioteca**, desenvolvido como
 
 O sistema foi desenhado para organizar uma coleção de livros. Ele realiza as funções básicas de adicionar, consultar, editar e remover itens (o famoso CRUD), além de controlar os empréstimos feitos pelos leitores.
 
-**O que usamos na prática:**
+**O que usei na prática:**
 * **Herança e Polimorfismo**
 * **Encapsulamento**
 * **Coleções Genéricas** (para garantir a segurança dos tipos)
