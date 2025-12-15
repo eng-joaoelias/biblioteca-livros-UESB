@@ -125,7 +125,7 @@ Para não perder os dados, usei a **serialização de objetos**.
 
 O desenvolvimento deste projeto foi uma ótima oportunidade para colocar em prática os conceitos de POO. Consegui criar um sistema funcional que atende aos requisitos propostos.
 
-Para uma **demonstração prática** e visual do uso do sistema, confira o vídeo no link abaixo.
+Para uma **demonstração prática** e visual do uso do sistema, confira o vídeo, gravado e editado por mim, no link abaixo.
 
 **Link para Demonstração (Vídeo):** [Assistir à Demonstração do Sistema de Biblioteca no YouTube](https://youtu.be/Vad1gY-tCD4)
 
