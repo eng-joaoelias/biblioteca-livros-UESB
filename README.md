@@ -125,18 +125,10 @@ Para não perder os dados, usei a **serialização de objetos**.
 
 O desenvolvimento deste projeto foi uma ótima oportunidade para colocar em prática os conceitos de POO. Consegui criar um sistema funcional que atende aos requisitos propostos.
 
-Para uma **demonstração prática** do uso do sistema, confira o vídeo no link abaixo:
+Para uma **demonstração prática** e visual do uso do sistema, confira o vídeo de no máximo 5 minutos no link abaixo.
 
-**Link para Demonstração (Vídeo):** 
+**Link para Demonstração (Vídeo):** [Assistir à Demonstração do Sistema de Biblioteca no YouTube](https://youtu.be/Vad1gY-tCD4)
 
-<iframe 
-    width="560" 
-    height="315" 
-    src="URL DO VÍDEO EMBED (EXEMPLO: https://www.youtube.com/embed/SUA_ID_DO_VIDEO)" 
-    title="Demonstração do Sistema de Gerenciamento de Biblioteca (POO)" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
+> **Observação:** O vídeo demonstra as funcionalidades de CRUD, empréstimo/devolução e o tratamento de erros apresentado nas capturas de tela.
 
 Embora seja um projeto de console simples, ele é bem estruturado. Se for necessário expandir, posso facilmente adicionar uma interface gráfica ou migrar a persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio.
