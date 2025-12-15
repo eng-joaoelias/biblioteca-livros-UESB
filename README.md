@@ -1,110 +1,104 @@
-# Documentação Técnica – Sistema de Gerenciamento de Biblioteca
+# 📖 Documentação Técnica – Sistema de Gerenciamento de Biblioteca
 
-## 1. Apresentação do Projeto
+## 1. Introdução: O Projeto POO na Prática
 
-Este projeto consiste no desenvolvimento de um **Sistema de Gerenciamento de Biblioteca**, implementado como uma aplicação de console na linguagem **Java**, com o objetivo principal de aplicar, na prática, os conceitos estudados na disciplina de **Programação Orientada a Objetos (POO)**.
+Este projeto é um **Sistema de Gerenciamento de Biblioteca**, desenvolvido como um programa de **console em Java**. Nosso foco principal foi aplicar na prática todos os conceitos que estudamos em **Programação Orientada a Objetos (POO)**.
 
-O sistema foi projetado para gerenciar uma coleção de livros, permitindo operações básicas de cadastro, consulta, edição e remoção, além do controle de empréstimos realizados por leitores. Durante o desenvolvimento, buscou-se aplicar corretamente conceitos como **herança, encapsulamento, polimorfismo, uso de coleções genéricas, tratamento de exceções e persistência de dados**.
+O sistema foi desenhado para organizar uma coleção de livros. Ele realiza as funções básicas de adicionar, consultar, editar e remover itens (o famoso CRUD), além de controlar os empréstimos feitos pelos leitores.
 
-A escolha por uma aplicação de console foi feita por simplicidade e por estar de acordo com o conteúdo abordado em sala de aula, permitindo maior foco na lógica de negócio e na modelagem orientada a objetos.
+**O que usamos na prática:**
+* **Herança e Polimorfismo**
+* **Encapsulamento**
+* **Coleções Genéricas** (para garantir a segurança dos tipos)
+* **Tratamento de Exceções** (para evitar que o programa quebre)
+* **Persistência de Dados** (para salvar os dados em arquivo)
 
----
-
-## 2. Funcionalidades do Sistema
-
-As principais funcionalidades implementadas no sistema são:
-
-- **Persistência de dados:**  
-  Os livros cadastrados são salvos em arquivo utilizando serialização de objetos, permitindo que os dados sejam mantidos mesmo após o encerramento do programa.
-
-- **Gerenciamento de livros:**  
-  É possível adicionar, remover, editar e consultar livros a partir de um identificador único (ID) ou pelo título.
-
-- **Controle de empréstimos:**  
-  O sistema permite registrar empréstimos e devoluções, associando cada livro emprestado a um leitor específico.
-
-- **Listagem e organização:**  
-  Os livros podem ser listados de forma ordenada por título ou autor, além de filtros por autor específico ou por leitor que possui livros emprestados.
-
-- **Tratamento de erros:**  
-  Foram utilizados mecanismos de tratamento de exceções para evitar falhas causadas por entradas inválidas do usuário ou problemas de leitura e escrita em arquivos.
+Escolhemos a aplicação de console por ser simples e direta, permitindo que nos concentrássemos totalmente na lógica do negócio e na modelagem orientada a objetos.
 
 ---
 
-## 3. Estrutura do Projeto
+## 2. O Que o Sistema Faz (Funcionalidades)
 
-O sistema foi organizado seguindo uma **estrutura em camadas**, com o objetivo de separar responsabilidades e facilitar a manutenção do código.
+As principais funções que implementamos no sistema são:
 
-| Camada | Pacote | Descrição |
-|------|--------|-----------|
-| Modelo | `model` | Contém as classes que representam as entidades do domínio do sistema. |
-| Serviço | `service` | Responsável pela lógica de negócio e pela persistência dos dados. |
-| Aplicação | `main` | Contém a classe principal responsável pela interação com o usuário via console. |
+* **Salvar Dados (Persistência):** Os livros são salvos em um arquivo no computador usando o recurso de **serialização de objetos**. Assim, os dados não se perdem quando o programa é fechado e podem ser carregados novamente na próxima execução.
+* **Gerenciamento de Livros (CRUD):** É fácil adicionar, remover ou editar livros. A busca pode ser feita pelo ID único ou pelo título do livro.
+* **Controle de Empréstimos:** O sistema registra quem pegou qual livro e controla as devoluções, associando cada livro emprestado a um leitor específico.
+* **Organização e Listagem:** Podemos listar os livros de várias maneiras, como ordenados por título ou autor. Também implementamos filtros, como listar todos os livros de um autor específico ou apenas aqueles que estão emprestados.
+* **Prevenção de Erros:** Usamos o **tratamento de exceções** (o `try-catch`) para evitar falhas, tanto para lidar com entradas de usuário que não fazem sentido (como digitar texto onde se espera um número) quanto para problemas de leitura e escrita de arquivos.
 
 ---
 
-## 4. Descrição das Classes
+## 3. Como o Código Está Organizado (Arquitetura)
 
-### 4.1 Pacote `model`
+O código foi dividido em **três camadas** principais para separar as responsabilidades, o que facilita a manutenção e a expansão futura:
+
+| Camada | Pacote | O que Faz |
+| :--- | :--- | :--- |
+| **Modelo** | `model` | Contém as classes que representam as "coisas" da biblioteca (Livro, Leitor, Autor, Pessoa). |
+| **Serviço** | `service` | É o "cérebro" do sistema. Contém a **Lógica de Negócio** e a parte de persistência de dados. |
+| **Aplicação** | `main` | A interface de **Apresentação**. É a classe principal que interage com o usuário pelo console. |
+
+---
+
+## 4. Detalhando as Classes
+
+### 4.1 Pacote `model` (As Entidades)
 
 | Classe | Descrição |
-|------|-----------|
-| `Pessoa` | Classe base abstrata que armazena dados comuns como nome, telefone e e-mail. |
-| `Leitor` | Representa um usuário da biblioteca. Herda os atributos da classe `Pessoa`. |
-| `Autor` | Armazena informações do autor do livro, como nome e nacionalidade. |
-| `Livro` | Classe principal do sistema. Representa um livro e implementa `Comparable<Livro>` para permitir ordenação por título. |
+| :--- | :--- |
+| `Pessoa` | A classe-mãe (abstrata) que guarda dados comuns, como nome, telefone e e-mail. |
+| `Leitor` | Representa o usuário. Ela **herda** os dados básicos da classe `Pessoa`. |
+| `Autor` | Guarda informações sobre o autor (nome, nacionalidade). |
+| `Livro` | A classe mais importante. Representa o livro e implementa a interface `Comparable` para permitir a ordenação. |
 
-**Relacionamentos:**
-- `Livro` possui uma **composição** com `Autor`, pois um livro sempre deve ter um autor.
-- `Livro` mantém uma **associação opcional** com `Leitor`, utilizada quando o livro está emprestado.
+**Como as Classes se Relacionam:**
+* **Livro e Autor:** Há uma **Composição** – o Livro *precisa* ter um Autor.
+* **Livro e Leitor:** Há uma **Associação Opcional** – o Livro *pode* ter um Leitor associado (se estiver emprestado).
+
+
 
 ---
 
-### 4.2 Pacote `service`
+### 4.2 Pacote `service` (A Lógica)
 
 | Classe | Descrição |
-|------|-----------|
-| `Persistencia` | Responsável por salvar e carregar os dados do sistema utilizando serialização. |
-| `GerenciadorBiblioteca` | Classe central do sistema, onde estão implementadas as regras de negócio e o controle da lista de livros. |
+| :--- | :--- |
+| `Persistencia` | É a classe que lida diretamente com os arquivos, usando serialização para salvar e carregar os dados. |
+| `GerenciadorBiblioteca` | A classe central! Nela estão todas as regras de negócio e o controle da lista principal de livros (`ArrayList<Livro>`). |
 
-A classe `GerenciadorBiblioteca` manipula uma `ArrayList<Livro>` e utiliza a classe `Persistencia` sempre que ocorre alguma alteração nos dados.
-
----
-
-## 5. Aplicação dos Conceitos de POO
-
-Os principais conceitos de Programação Orientada a Objetos foram aplicados da seguinte forma:
-
-| Conceito | Aplicação |
-|--------|----------|
-| Herança | A classe `Leitor` herda atributos e métodos da classe `Pessoa`. |
-| Encapsulamento | Todos os atributos das classes são privados, com acesso controlado por getters e setters. |
-| Polimorfismo | Métodos como `toString()` e `equals()` foram sobrescritos para fornecer comportamentos específicos. |
-| Coleções Genéricas | Uso de `ArrayList<Livro>` e `ArrayList<Leitor>` para garantir segurança de tipos. |
-| Interfaces | Implementação de `Comparable<Livro>` e uso de `Comparator<Livro>` para ordenação flexível. |
-| Tratamento de Exceções | Utilização de `try-catch` para tratar erros de entrada do usuário e exceções de I/O. |
+O `GerenciadorBiblioteca` usa a `Persistencia` sempre que é necessário salvar ou carregar as alterações nos dados.
 
 ---
 
-## 6. Persistência de Dados
+## 5. Como Usamos POO de Verdade
 
-Para garantir que os dados não sejam perdidos após o encerramento do programa, foi utilizada a **serialização de objetos**.
+Usamos os principais conceitos de Programação Orientada a Objetos da seguinte maneira:
 
-### Funcionamento:
-
-- **Ao iniciar o sistema:**  
-  O `GerenciadorBiblioteca` tenta carregar a lista de livros a partir de um arquivo utilizando a classe `Persistencia`.  
-  Caso o arquivo não exista ou esteja corrompido, uma nova lista vazia é criada.
-
-- **Durante a execução:**  
-  Sempre que ocorre uma alteração na lista de livros (cadastro, remoção, edição ou empréstimo), os dados são imediatamente salvos no arquivo.
-
-Essa abordagem foi escolhida por ser simples, eficiente para o escopo do projeto e adequada ao conteúdo estudado na disciplina.
+| Conceito | Onde Aplicamos |
+| :--- | :--- |
+| **Herança** | A classe `Leitor` estende e aproveita os atributos e métodos da classe `Pessoa`. |
+| **Encapsulamento** | Todos os atributos importantes das classes são `private`, e o acesso é feito apenas por meio de métodos públicos (`getters` e `setters`). |
+| **Polimorfismo** | Sobrescrevemos (usamos `@Override`) métodos como `toString()` e `equals()` nas classes de modelo para que se comportem de forma específica para cada objeto. |
+| **Coleções Genéricas** | Usamos `ArrayList<Livro>` e `ArrayList<Leitor>` para garantir que a lista só aceite o tipo de objeto correto (segurança de tipos). |
+| **Interfaces** | Implementamos `Comparable<Livro>` para definir a ordem natural dos livros (pelo título) e usamos `Comparator`s para ordenações flexíveis por outros critérios. |
+| **Tratamento de Exceções** | Usamos `try-catch` em vários pontos para garantir que o sistema lide com erros de I/O de arquivos e entradas do usuário. |
 
 ---
 
-## 7. Considerações Finais
+## 6. Como os Dados São Salvos (Serialização)
 
-O desenvolvimento deste projeto possibilitou a aplicação prática dos conceitos de Programação Orientada a Objetos, reforçando a importância da organização do código, do uso adequado de classes e do tratamento de exceções.
+Para não perder os dados, usamos a **serialização de objetos**.
 
-Apesar de simples, o sistema atende aos requisitos propostos e pode ser facilmente expandido no futuro, como por exemplo com a adição de uma interface gráfica ou o uso de um banco de dados relacional.
+### O Fluxo:
+
+* **Ao Ligar o Sistema:** O `GerenciadorBiblioteca` tenta carregar a lista de livros que foi salva no arquivo. Se o arquivo ainda não existir (primeiro uso) ou estiver com problemas, ele simplesmente cria uma nova lista vazia.
+* **Durante o Uso:** Toda vez que um livro é cadastrado, editado, removido ou emprestado, os dados são **imediatamente salvos** no arquivo. Assim, garantimos que o estado mais recente dos dados está sempre persistido.
+
+---
+
+## 7. Conclusão e Próximos Passos
+
+O desenvolvimento deste projeto foi uma ótima oportunidade para colocar em prática os conceitos de POO. Conseguimos criar um sistema funcional que atende aos requisitos propostos.
+
+Embora seja um projeto de console simples, ele é bem estruturado. Se quisermos expandir, podemos facilmente adicionar uma interface gráfica ou migrar a persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio.
