@@ -131,4 +131,4 @@ Para uma **demonstração prática** e visual do uso do sistema, confira o víde
 
 > **Observação:** O vídeo demonstra as funcionalidades de CRUD, empréstimo/devolução e o tratamento de erros apresentado nas capturas de tela.
 
-Embora seja um projeto de console simples, ele é bem estruturado. Se for necessário expandir, posso facilmente adicionar uma interface gráfica ou migrar a persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio.
+Embora seja um projeto de console simples, ele é bem estruturado. Se for necessário expandir, a implementação de uma interface gráfica ou migração da persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio podem ser levadas para a próxima etapa de implementação do projeto.
