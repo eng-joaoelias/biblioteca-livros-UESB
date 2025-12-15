@@ -127,6 +127,16 @@ O desenvolvimento deste projeto foi uma ótima oportunidade para colocar em prá
 
 Para uma **demonstração prática** do uso do sistema, confira o vídeo no link abaixo:
 
-**Link para Demonstração (Vídeo):** https://youtu.be/Vad1gY-tCD4
+**Link para Demonstração (Vídeo):** 
+
+<iframe 
+    width="560" 
+    height="315" 
+    src="URL DO VÍDEO EMBED (EXEMPLO: https://www.youtube.com/embed/SUA_ID_DO_VIDEO)" 
+    title="Demonstração do Sistema de Gerenciamento de Biblioteca (POO)" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
 
 Embora seja um projeto de console simples, ele é bem estruturado. Se for necessário expandir, posso facilmente adicionar uma interface gráfica ou migrar a persistência para um banco de dados relacional sem ter que reescrever toda a lógica de negócio.
